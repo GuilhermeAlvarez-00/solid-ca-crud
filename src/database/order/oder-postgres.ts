@@ -1,3 +1,4 @@
+import { OrderGateway } from "../../gateway/order.gateway";
 import { clientPG } from "../../utils/database";
 
 type OrderInMemoryProps = {
@@ -8,7 +9,7 @@ type OrderInMemoryProps = {
   facilityId: string;
 };
 
-export class OrderPostgres {
+export class OrderPostgres implements OrderGateway {
   async save({
     id,
     document,
